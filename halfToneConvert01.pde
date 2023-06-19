@@ -24,8 +24,8 @@ void setup() {
         float angle = atan2(tY-y0,tX-x0);
         float length = dist(x0,y0,tX,tY);
         angle+=rot;
-        tX = cos(angle)*length;
-        tY = sin(angle)*length;
+        tX = x0+cos(angle)*length;
+        tY = y0+sin(angle)*length;
         color thisPixel = im.get(floor(tX), floor(tY));
         int[] thisColor = rgbToKcmy((int)red(thisPixel), (int)green(thisPixel), (int)blue(thisPixel));
         float cSize = pow((float)thisColor[c]/100.0,0.75)*gap*1.3;
